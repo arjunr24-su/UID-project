@@ -1,22 +1,40 @@
-.top{
-    background : black;
+/* Add a black background color to the top navigation bar */
+.top {
+    background: black;
 }
-.nav   {
-    text-align: center;
-    margin-top: 100px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:rgb(255, 255, 255)
-    
-   
-}
-.nav a{
-    text-decoration: none;
-    color: white;
-    font-size:23.72px;
-    margin-left:50px;
-    margin-right:50px;
 
-.search{
-    
+/* Style the links inside the navigation bar */
+.nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
+
+/* Change the color of links on hover */
+.nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.nav a.active {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* Style the search box inside the navigation bar */
+#find input[type="search"] {
+    float: left; /* Align to the left */
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    font-size: 17px;
+    background-color: white;
+    color: grey;
 }
