@@ -1,36 +1,34 @@
 *{
-   background-color:#111111;
-
-}
-header img{
-    position: absolute;
-    top: 0.3%;
-    left :37%;
-    background-color: black;
-
+    background-color: #111111 ;
 }
 
-.top img {
+.logo img {
     position: fixed;
-    left:550px;
-   
+    left:34%;
+    height:120px;
+    top:0%
 }
+
 .nav{
-    margin-top: 110px;
-    
+    background-color: #111111;
+    margin-top: 150px;
 }
-.nav a{
+.nav a {
     text-decoration: none ;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:rgb(255, 255, 255) ;
-  
-    margin-left:90px;
-    font-size: 22px;
-}
-#find input[type="search"] {
-    float: left;
-    margin-left:1350px;
-    size:100px;
-    display: block;
+    font-weight: 600;
+    margin-left:50px;
+    margin-right:40px;
+    font-size: 25px;
+   }
+
+#find {
 
 }
+
+body {
+    background-color: white;
+
+}
+
