@@ -3,7 +3,7 @@
 }
 
 .logo img {
-    position: fixed;
+    position:absolute;
     left:34%;
     height:120px;
     top:0%
