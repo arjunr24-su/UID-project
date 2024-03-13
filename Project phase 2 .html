@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         .top {
             display: flex;
             border: 2px solid black;
@@ -46,13 +52,26 @@
             align-items: center;
         }
 
-        .Latest {
-            height: 120vh;
-            border: 2px solid red;
-            background-image: url(https://c.pxhere.com/photos/e3/b7/photo-89604.jpg!d);
+        .main {
+            background-image: url(https://dt.azadicdn.com/wp-content/uploads/2014/01/beautiful_forest_path_2-wallpaper-1920x1080.jpg?6445);
+            background-size: cover;
             background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover; /* Added to ensure proper fitting */
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 33vw 33vw 33vw ;
+            grid-template-rows:33% 33% 33%;
+            border: 2px solid white;
+        }
+
+        .types {
+            color: white;
+            border: 2px solid white;
+            grid-row-start: 2;
+        }
+        .latest{
+            border: 2px solid rgb(184, 36, 36);
+            grid-row-start: 2;
+            grid-column-start: 2;
         }
     </style>
 </head>
@@ -84,11 +103,37 @@
         <a href="">Maruti</a>
         <a href="">Tata</a>
     </div>
+    <div class="main">
+        <div class="types">
+            <ul>
+                <li>
+                    <div class="bar">
+                        <div class="Model"> Sedan</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bar">
+                        <div class="Model"> XUV</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bar">
+                        <div class="Model"> SUV</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bar">
+                        <div class="Model"> Hatchback</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="latest">
+            car1
 
-    <div class="Latest">
-
+        </div>
     </div>
+
 </body>
 
 </html>
-z
