@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royce Motors</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin-top: 10px;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .main-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #222;
+        }
+
+        /* Features Section Styles */
+        .features {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .feature-item {
+            margin-bottom: 30px;
+        }
+
+        .feature-item img {
+            width: 100px;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 16px;
+        }
+
+        /* Testimonials Section Styles */
+        .testimonials {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .testimonial-item {
+            margin-bottom: 30px;
+        }
+
+        .testimonial-item img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .contact-info p {
+            margin-bottom: 5px;
+        }
+
+        footer .social-links img {
+            width: 30px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+        
+        /* Gallery Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%; /* Ensure the image fills the entire container */
+            object-fit: cover; /* Cover the container while maintaining aspect ratio */
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h3 {
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Royce Motors</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Inventory</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1>Explore Luxury</h1>
+        <p>Discover our collection of exquisite vehicles</p>
+        <a href="#" class="btn">View Inventory</a>
+    </div>
+
+    <div class="features">
+        <h2>Our Features</h2>
+        <div class="feature-item">
+            <img src="feature1.png" alt="Feature 1">
+            <h2>Luxury Design</h2>
+            <p>Experience unparalleled elegance and style</p>
+        </div>
+        <div class="feature-item">
+            <img src="feature2.png" alt="Feature 2">
+            <h2>State-of-the-Art Technology</h2>
+            <p>Discover cutting-edge innovations in automotive engineering</p>
+        </div>
+        <div class="feature-item">
+            <img src="feature3.png" alt="Feature 3">
+            <h2>Exceptional Performance</h2>
+            <p>Feel the power and precision of our high-performance engines</p>
+        </div>
+    </div>
+
+    <div class="gallery container">
+        <h1>LUXURY COLLECTIONS</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://www.primeluxuryrentals.com/wp-content/uploads/2014/12/bmw-i8-Luxury-Car-Rental-Miami.jpg" alt="BMW">
+                <div class="overlay">
+                    <h3>I8</h3>
+                </div>
+            </div>
+            <!-- Include other gallery items here -->
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.fUsOCwdjIh1M0F-FrP155QHaE5?pid=ImgDet&w=207&h=136&c=7&dpr=1.3" alt="BMW">
+                <div class="overlay">
+                    <h3>840 D</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.aLJK0LXsgEEJVn91Hsbw-gHaDP?w=349&h=153&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="BMW">
+                <div class="overlay">
+                    <h3>M760 LI</h3>
+                </div>
+            </div>
+            <!-- Add more gallery items as needed -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>123 Main Street, Cityville</p>
+            <p>Phone: 123-456-7890</p>
+            <p>Email: info@roycemotors.com</p>
+        </div>
+        <div class="social-links">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>
