@@ -3,11 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAMBORGHINI</title>
+    <title>BMW</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/html/car/Book%20Now.html">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/html/car/booking_confirm.html">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/html/car/Gallary.html">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/html/car/test_confirm.html">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/html/car/testdrive.html">
+
     
     <style>
-        /* CSS from First Snippet */
+        @media (max-width: 768px) {
+            .container .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .header .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .header .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .main_content {
+                grid-template-columns: 1fr;
+            }
+
+            .container .main_content .content h1 {
+                font-size: 36px;
+            }
+
+            .container .main_content .content span {
+                font-size: 24px;
+            }
+
+            .container .main_content .content p {
+                font-size: 16px;
+            }
+
+            .container .futures {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .futures .engines,
+            .transmission,
+            .power,
+            .brake {
+                width: 80%;
+            }
+        }
+        
         * {
             padding: 0;
             margin: 0;
@@ -152,8 +202,7 @@
 
         .container .header {
             width: 100%;
-            margin: 1%;
-            left: 0;
+            margin: 1% ;left: 0;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -161,9 +210,9 @@
         }
 
         .container .header .logo {
-            width: 131px;
-            height: 70px;
-            background: url("Lamborghini-Logo-3570243049.png");
+            width: 100px;
+            height: 100px;
+            background: url('bmw_logo.png');
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -250,7 +299,7 @@
         .container .main_content .car_img {
             width: 90%;
             height: 350px;
-            background: url("lamborghini-56-29-512-4075175764.png");
+            background: url('Blue BMW M2 Coupe Car - 1812x960.png');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -307,39 +356,39 @@
             <div class="nav">
                 <ul>
                     <li><a href="http://127.0.0.1:5500/html/testdrive.html">HOME</a></li>
-                    <li><a href="http://127.0.0.1:5500/html/car/Gallery.html">GALLERY</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/car/Gallary.html">GALLERY</a></li>
                     <li><a href="#">CONTACT</a></li>
                 </ul>
             </div>
             <div class="buttons">
-                <a href="Lamborghini/Book Now.html"><button id="BookNow">BOOK NOW</button></a>
-                <a href="Lamborghini/testdrive.html"><button id="TestDrive">TEST DRIVE</button></a>
+                <a href="http://127.0.0.1:5500/html/car/Book%20Now.html"><button id="BookNow">BOOK NOW</button></a>
+                <a href="http://127.0.0.1:5500/html/car/testdrive.html"><button id="TestDrive">TEST DRIVE</button></a>
             </div>
         </div>
 
         <div class="main_content">
             <div class="content">
-                <h1>LAMBORGHINI<br><span>REVUELTO</span></h1>
-                <p>Where Heritage Meets Innovation</p>
+                <h1>BMW M2 <br><span>competition</span></h1>
+                <p>Maximum Driving dynamic and Exclusiveness</p>
             </div>
             <div class="car_img"></div>
         </div>
         <div class="futures">
             <div class="engines">
-                <img src="engine_PNG3-498995127.png">
-                <p>Groundbreaking hybrid super sports car, with a total power output of 1015 CV (cavalli vapore),from the brand-new V-12 engine </p>
+                <img src="engine.png">
+                <p>625 HP (460 kw) High-Performance M Twin Cylinder Turbo Engine</p>
             </div>
             <div class="transmission">
-                <img src="lamborghini-huracan-gearbox-4094875102.png">
-                <p>Transversal dual clutch e-gearbox for lightning-fast gear changes.</p>
+                <img src="transmission.png">
+                <p>M XDrive with active M differential Auto 8 speed gear box</p>
             </div>
             <div class="power">
-                <img src="lamborghini_speedometer_audio_spectrum_by_nxgm_1_by_n3m3xxgm-dcbi0ke-3353836218.png">
-                <p>Top speed: >350 km/h. Acceleration:0-100 km/h </p>
+                <img src="power.png">
+                <p>460 kw/625 Nm, 0-100 km/h in 3.2s</p>
             </div>
             <div class="brake">
-                <img src="Screenshot 2024-04-20 112650.png">
-                <p>20-inch wheels at the front and 21-inch wheels at the rear.</p>
+                <img src="brake.png">
+                <p>4 wheel alloy with 20mm disk brake</p>
             </div>
         </div>
     </div>
