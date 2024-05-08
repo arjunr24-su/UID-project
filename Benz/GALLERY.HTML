@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Gallery</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            /* Text color */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #ffffff;
+            /* Text color */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(255, 163, 3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            /* Ensure the image fills the entire container */
+            object-fit: cover;
+            /* Cover the container while maintaining aspect ratio */
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            /* Dark overlay */
+            color: #ffffff;
+            /* Text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h3 {
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>LUXURY COLLECTIONS</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images6.alphacoders.com/771/thumbbig-771388.webp"
+                    alt="BMW">
+                <div class="overlay">
+             
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images6.alphacoders.com/833/thumbbig-833701.webp"
+                    alt="BMW">
+                <div class="overlay">
+                  
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images8.alphacoders.com/683/thumbbig-683485.webp"
+                    alt="BMW">
+                <div class="overlay">
+                
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images3.alphacoders.com/552/thumbbig-552277.webp"
+                    alt="BMW">
+                <div class="overlay">
+               
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.alphacoders.com/109/thumbbig-1096498.webp"
+                    alt="BMW">
+                <div class="overlay">
+             
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images6.alphacoders.com/116/thumbbig-1169592.webp"
+                    alt="BMW">
+                <div class="overlay">
+              
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.alphacoders.com/117/thumbbig-1178029.webp"
+                    alt="BMW">
+                <div class="overlay">
+               
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images2.alphacoders.com/552/thumbbig-552276.webp"
+                    alt="BMW">
+                <div class="overlay">
+           
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images8.alphacoders.com/111/thumbbig-1116894.webp"
+                    alt="BMW">
+                <div class="overlay">
+
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.alphacoders.com/895/thumbbig-895522.webp"
+                    alt="BMW">
+                <div class="overlay">
+          
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images4.alphacoders.com/903/thumbbig-903738.webp"
+                    alt="BMW">
+                <div class="overlay">
+          
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images6.alphacoders.com/809/thumbbig-809646.webp"
+                    alt="BMW">
+                <div class="overlay">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <style>
+        @media (max-width: 768px) {
+            .container .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .header .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .header .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .main_content {
+                grid-template-columns: 1fr;
+            }
+
+            .container .main_content .content h1 {
+                font-size: 36px;
+            }
+
+            .container .main_content .content span {
+                font-size: 24px;
+            }
+
+            .container .main_content .content p {
+                font-size: 16px;
+            }
+
+            .container .futures {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .futures .engine,
+            .transmission,
+            .power,
+            .brake {
+                width: 80%;
+            }
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .box {
+            position: relative;
+            width: 380px;
+            height: auto;
+            background: #1c1c1c;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .box::before,
+        .box::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 480px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+            animation: animate 6s linear infinite;
+        }
+
+        .box::after {
+            animation-delay: -3s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .form {
+            position: relative;
+            inset: 2px;
+            background: #28292d;
+            padding: 50px 40px;
+            border-radius: 8px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: #45f3ff;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .inputBox {
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .inputBox input {
+            width: calc(100% - 20px);
+            padding: 20px 10px 10px;
+            background: transparent;
+            outline: none;
+            box-shadow: none;
+            border: none;
+            color: #23242a;
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            z-index: 10;
+        }
+
+        .inputBox input:focus {
+            color: #45f3ff;
+        }
+
+        .inputBox input:focus ~ span {
+            color: #45f3ff;
+            transform: translateX(0px) translateY(-34px);
+            font-size: 0.75em;
+        }
+
+        .inputBox span {
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            font-size: 1em;
+            color: #8f8f8f;
+            transition: 0.5s;
+        }
+
+        .inputBox i {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #45f3ff;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .inputBox input:focus ~ i {
+            height: 44px;
+        }
+
+        input[type="submit"] {
+            border: none;
+            outline: none;
+            padding: 11px 25px;
+            background: #45f3ff;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            width: 100px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:active {
+            opacity: 0.8;
+        }
+
+        /* Mercedes-specific styles */
+        .container {
+            width: 100%;
+            height: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .container .header {
+            width: 100%;
+            margin: 1% ;left: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container .header .logo {
+            width: 100px;
+            height: 100px;
+            background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yLeDEARUVyb5y_yxHrA8BAHaHJ%26pid%3DApi&f=1&ipt=9f879e1e66e2b391f4b79ce8d6c36c5bcc302cf206dd55b8a330452e8de756a0&ipo=images');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container .header .nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .container .header .nav ul li {
+            font-size: 14px;
+            font-weight: 500;
+            list-style: none;
+            letter-spacing: 1px;
+        }
+
+        .container .header .nav ul li a {
+            padding: 0;
+            outline: none;
+            text-decoration: none;
+            cursor: pointer;
+            color: #242b2e;
+        }
+
+        .container .header .nav ul li a:hover {
+            border-bottom: 2px solid #4facfe;
+        }
+
+        .container .header .buttons {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .container .header .buttons button {
+            width: 120px;
+            height: 40px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: #242b2e;
+        }
+
+        #BookNow:hover,
+        #TestDrive:hover {
+            color: #ffff;
+            background-image: linear-gradient(to right, #4facfe 20%, #00f2fe 80%);
+        }
+
+        .container .main_content {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;padding: 30px;
+        }
+
+        .container .main_content .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .container .main_content .content h1 {
+            font-size: 52px;
+            letter-spacing: 2px;
+        }
+
+        .container .main_content .content span {
+            font-size: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .container .main_content .content p {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .container .main_content .car_img {
+            width: 90%;
+            height: 300px;
+            background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngplay.com%2Fwp-content%2Fuploads%2F13%2FMercedes-Benz-AMG-Background-PNG-Image.png&f=1&nofb=1&ipt=f03415be8a42a1a875c158dc435012a09bd36d699a46f789e2060aba52d08eb1&ipo=images');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container .futures {
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container .futures .engine,
+        .transmission,
+        .power,
+        .brake {
+            width: 300px;
+            height: 90px;
+            padding: 4px;
+            margin: 25px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .container .futures .engine img,
+        .transmission img,
+        .power img,
+        .brake img {
+            width: 100px;
+            height: 80px;
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        .container .futures .engine:hover,
+        .transmission:hover,
+        .power:hover,
+        .brake:hover {
+            background-image: linear-gradient(to right, #4facfe 20%, #00f2fe 80%);
+            color: #ffff;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="nav">
+                <ul>
+                    <li><a href="http://127.0.0.1:5500/html/testdrive.html">HOME</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/car/Gallary.html">GALLERY</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <a href="http://127.0.0.1:5500/html/car/Book%20Now.html"><button id="BookNow">BOOK NOW</button></a>
+                <a href="http://127.0.0.1:5500/html/car/testdrive.html"><button id="TestDrive">TEST DRIVE</button></a>
+            </div>
+        </div>
+
+        <div class="main_content">
+            <div class="content">
+                <h1>Mercedes-Benz <br><span>AMG GT</span></h1>
+                <p>Maximum Driving dynamic and Exclusiveness</p>
+            </div>
+            <div class="car_img"></div>
+        </div>
+        <div class="futures">
+            <div class="engine">
+                <img src="https://thenewswheel.com/wp-content/uploads/2014/06/engine_hero.png">
+                <p>4.0-litre V8 biturbo engine</p>
+            </div>
+            <div class="transmission">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.aisinaftermarket.eu%2Fwp-content%2Fuploads%2F2022%2F07%2FAISIN_AW_automatictransmission.png&f=1&nofb=1&ipt=a4e6b273a9f9b4f48b0925086b10d90c0051ff69ca0864fe656f900503b8e251&ipo=images">
+                <p>AMG SPEEDSHIFT MCT 9-speed automatic transmission</p>
+            </div>
+            <div class="power">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0272%2F8512%2F7304%2Fproducts%2Fcluster-1_1200x630.png%3Fv%3D1610592549&f=1&nofb=1&ipt=4498327fffd5661f0e2fc9ec2068678d0753144e18867b26912106b311a216bd&ipo=images">
+                <p>470 kw/900 Nm, 0-100 km/h in 3.2s</p>
+            </div>
+            <div class="brake">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fauto-brake-service-png-automotive-braking-system-390.png&f=1&nofb=1&ipt=d748ba16d56172bad289bebfb7aa4dab5a68ccce0a55adb84f7aa8e81f293007&ipo=images">
+                <p>High-performance composite brake system</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
