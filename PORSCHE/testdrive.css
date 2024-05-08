@@ -13,7 +13,7 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	flex-direction: column;
-	background:rgb(105, 105, 100);
+	background:rgb(90, 90, 89);
 }
 
 .box {
@@ -55,7 +55,7 @@ body {
 .form {
 	position: relative;
     inset: 2px;
-	background:rgb(88, 93, 94);
+	background:rgb(91, 76, 73);
 	padding: 50px 40px;
 	border-radius: 8px;
 	z-index: 2;
@@ -75,7 +75,7 @@ h2 {
 	position: relative;
 	width: 100%;
 	margin-top: 20px;
-	background-color: #fbfaf4;
+	background-color: #f9f8f5;
 }
 
 .inputBox input {
