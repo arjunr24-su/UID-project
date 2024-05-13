@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://source.unsplash.com/1600x900/?sports-car');
+      background-size: cover;
+      background-position: center;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode-on {
+      background-color: #333;
+      color: #fff;
+      height:25px;
+    }
+    .nav  {
+      display: flex;
+      justify-content: space-between; /* Aligns elements to the start and end of the container */
+      align-items: center; /* Centers items vertically */
+      text-align: center;
+      font-size: small;
+      background-color: black;
+      color: white;
+      padding: 10px;
+    }
+    .nav a {
+        text-decoration: none;
+        color: white;
+    }
+    .dark-mode-button {
+      padding: 5px 10px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container {
+      width: 50%;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 5px 10px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="nav">
+    <a href=""><h1>ASTRA</h1></a>
+    <button class="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
+</div>
+<div class="container">
+  <h1>Car Preferences</h1>
+  <form id="carForm">
+    <label for="carBrand">Car Brand:</label>
+    <select id="carBrand">
+      <option value="">Select</option>
+      <option value="aston-martin">Aston Martin</option>
+      <option value="bentley">Bentley</option>
+      <option value="mercedes-amg">Mercedes AMG</option>
+      <option value="bmw">BMW</option>
+      <option value="ferrari">Ferrari</option>
+      <option value="lamborghini">Lamborghini</option>
+      <option value="maserati">Maserati</option>
+      <option value="pagani">Pagani</option>
+      <option value="porsche">Porsche</option>
+    </select>
+
+    <label for="carType">Car Type:</label>
+    <select id="carType">
+      <option value="">Select</option>
+      <option value="sports">Sports</option>
+      <option value="sedan">Sedan</option>
+    </select>
+
+    <label for="seats">Number of Seats:</label>
+    <select id="seats">
+      <option value="">Select</option>
+      <option value="2">2</option>
+      <option value="4">4</option>
+    </select>
+
+    <label for="fuel">Fuel Type:</label>
+    <select id="fuel">
+      <option value="">Select</option>
+      <option value="petrol">Petrol</option>
+      <option value="diesel">Diesel</option>
+      <option value="hybrid">Hybrid</option>
+    </select>
+
+    <label for="color">Color:</label>
+    <select id="color">
+      <option value="">Select</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="black">Black</option>
+      <option value="silver">Silver</option>
+      <option value="white">White</option>
+    </select>
+
+    <label for="mileage">Mileage:</label>
+    <input type="number" id="mileage">
+
+    <label for="power">Power Range:</label>
+    <select id="power">
+      <option value="">Select</option>
+      <option value="100-500">100-500 bhp</option>
+      <option value="500-1000">500-1000 bhp</option>
+      <option value="1000">1000 bhp+</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('carForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var carBrand = document.getElementById('carBrand').value;
+    var carType = document.getElementById('carType').value;
+    var seats = document.getElementById('seats').value;
+    var fuel = document.getElementById('fuel').value;
+    var color = document.getElementById('color').value;
+    var mileage = document.getElementById('mileage').value;
+    var power = document.getElementById('power').value;
+
+    // Check if any select element has a value of ""
+    if (carBrand === "" || carType === "" || seats === "" || fuel === "" || color === "" || power === "") {
+      alert('Please select options for all fields.');
+      return;
+    }
+
+    if (mileage === '') {
+      alert('Please enter a value for mileage.');
+      return;
+    }
+
+    if (isNaN(mileage) || mileage < 0) {
+      alert('Please enter a valid number for mileage.');
+      return;
+    }
+
+    alert('Car Brand: ' + carBrand + '\nCar Type: ' + carType + '\nNumber of Seats: ' + seats + '\nFuel Type: ' + fuel + '\nColor: ' + color + '\nMileage: ' + mileage + '\nPower Range: ' + power);
+  });
+
+  // Function to toggle dark mode
+  function toggleDarkMode() {
+    var body = document.body;
+    var button = document.querySelector('.dark-mode-button');
+
+    body.classList.toggle("dark-mode-on");
+
+    if (body.classList.contains("dark-mode-on")) {
+      button.textContent = "Light Mode";
+    } else {
+      button.textContent = "Dark Mode";
+    }
+  }
+</script>
+
+</body>
+</html>
