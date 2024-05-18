@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars of Excellence</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navl  {
+            display: flex;
+            justify-content: space-between; /* Aligns elements to the start and end of the container */
+            align-items: center; /* Centers items vertically */
+            text-align: center;
+            font-size: small;
+            background-color: black;
+            color: white;
+            padding: 10px;
+          }
+          .navl a {
+              text-decoration: none;
+              color: white;
+          }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        nav li {
+            margin-right: 20px;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            margin-top: 0;
+        }
+        
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .dark-mode-button {
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+          }
+          .dark-mode-on {
+            background-color: #333;
+            color: #fff;
+            height:25px;
+          }
+    </style>
+    <script>
+        // Add event listeners to navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        function toggleDarkMode() {
+            var body = document.body;
+            var button = document.querySelector('.dark-mode-button');
+        
+            body.classList.toggle("dark-mode-on");
+        
+            if (body.classList.contains("dark-mode-on")) {
+              button.textContent = "Light Mode";
+            } else {
+              button.textContent = "Dark Mode";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="navl">
+        <a href="#"><h1>ASTRA</h1></a>
+        <button class="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#aston-martin">Aston Martin</a></li>
+                <li><a href="#bentley">Bentley</a></li>
+                <li><a href="#mercedes-amg">Mercedes AMG</a></li>
+                <li><a href="#bmw">BMW</a></li>
+                <li><a href="#ferrari">Ferrari</a></li>
+                <li><a href="#lamborghini">Lamborghini</a></li>
+                <li><a href="#maserati">Maserati</a></li>
+                <li><a href="#pagani">Pagani</a></li>
+                <li><a href="#porsche">Porsche</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="aston-martin">
+            <h2>Aston Martin</h2>
+            <p>Aston Martin is renowned for its sleek designs and powerful engines. The DBS Superleggera is a prime example, with its 5.2-liter V12 engine producing 715 horsepower.</p>
+            <img src="aston-martin.jpg" alt="Aston Martin DBS Superleggera">
+        </section>
+        <section id="bentley">
+            <h2>Bentley</h2>
+            <p>Bentley is synonymous with luxury and sophistication. The Continental GT is a masterpiece, with its 6.0-liter W12 engine producing 626 horsepower.</p>
+            <img src="bentley.jpg" alt="Bentley Continental GT">
+        </section>
+        <!-- Add sections for each car brand, following the same structure -->
+        <section id="ferrari">
+            <h2>Ferrari</h2>
+            <p>Ferrari is the epitome of speed and style. The LaFerrari is a hybrid hypercar that produces 950 horsepower, making it one of the fastest cars in the world.</p>
+            <img src="ferrari.jpg" alt="Ferrari LaFerrari">
+        </section>
+        <!-- Add sections for each car brand, following the same structure -->
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
