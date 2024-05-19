@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            overflow-x: hidden;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: black;
+            height: auto;
+            overflow: hidden;
+
+        }
+
+        #Astra {
+            position: relative;
+            top: 25vh;
+            left: 70vh;
+            font-family: "Great Vibes", cursive;
+            font-weight: 20;
+            font-style: normal;
+            font-size: 190px;
+            color: rgb(255, 70, 70);
+            margin: 0;
+            padding: 0;
+            width: auto;
+        }
+
+        #menu_btn {
+            font-size: 42px;
+            /* Increased font size for the menu button */
+            height: auto;
+            position: relative;
+            top: -60vh;
+            z-index: 1;
+            border: 2px solid white;
+            /* Ensures the icon adjusts its height according to the font size */
+        }
+
+        .Container {
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://wallpaperaccess.com/full/173874.jpg);
+            color: #fff;
+            background-size: cover;
+
+        }
+
+        label:hover {
+            cursor: grab;
+        }
+
+
+
+        .Container .sidenav {
+            width: 100vw;
+            height: 10vh;
+            overflow: hidden;
+            position: relative;
+            bottom: 70vh;
+            padding: 32px 16px;
+            background-color: #000;
+            transition: width 0.6s;
+            overflow: hidden;
+        }
+
+        label .close-btn {
+            display: none;
+        }
+
+        .Container .logo h2 {
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+
+        .sidenav .search_bar {
+            margin-top: 32px;
+            position: relative;
+        }
+
+        .sidenav .search_bar i {
+            position: absolute;
+            color: #000;
+            font-size: 24px;
+            left: 38px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .sidenav .search_bar input {
+            width: 50%;
+            padding: 11px;
+            padding-left: 40px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            margin-left: 15px;
+        }
+
+        .sidenav .menu_text {
+            margin-top: 24px;
+        }
+
+        .sidenav .menu_text p {
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding-left: 10px;
+        }
+
+        .sidenav .icon_items ul {
+            list-style: none;
+            margin-top: 32px;
+            padding: 0 10px;
+        }
+
+        .sidenav .icon_items ul li {
+            cursor: pointer;
+            margin: 4px;
+            padding: 12px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            transition: 0.5s ease;
+        }
+
+        .icon_items .active,
+        .sidenav .icon_items ul li:hover {
+            background: #ff656575;
+        }
+
+        .sidenav .icon_items ul li i {
+            font-size: 26px;
+            padding: 0 12px;
+        }
+
+        .sidenav .icon_items ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 17px;
+            padding-left: 18px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+
+        #click {
+            display: none;
+
+        }
+
+        .container label {
+            position: absolute;
+            left: 3%;
+            top: 1.5%;
+            font-size: 24px;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        #click:checked~.sidenav {
+            position: relative;
+            top: -520px;
+            width: 360px;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.437);
+        }
+
+        #click:checked~.sidenav .icon_items ul li a {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #click:checked~.sidenav .logo h2 {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #click:checked~.sidenav .search_bar input {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        #click:checked~.sidenav .search_bar i {
+            left: 20px;
+        }
+
+        #click:checked~label {
+            left: 1%;
+        }
+
+
+
+        #tagline {
+            position: relative;
+            top: 30vh;
+            left: 400px;
+            height: 30vh;
+            border: 2px soolid white;
+            font-size: 30px;
+
+        }
+
+        .parallax {
+            position: relative;
+            /* Change this from "fixed" to "relative" */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('/images/NN.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+
+        .parallax img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        .parallax img#tree-left {
+            position: fixed;
+            transform: translateX(-5px);
+        }
+
+        .parallax img#tree-right {
+            position: fixed;
+            transform: translateX(5px);
+        }
+
+        .parallax img#gate-left {
+            position: fixed;
+            transform: translateX(-282px);
+        }
+
+        .parallax img#gate-right {
+            position: fixed;
+            transform: translateX(305px);
+        }
+
+        #text {
+            position: absolute;
+            font-size: 5em;
+            color: #fff;
+            text-shadow: 2px 4px 5px #f9f9f9;
+        }
+
+        .Sigga {
+            height: 120vh;
+            overflow: hidden;
+            max-height: 100vh;
+            /* Add this line */
+        }
+
+        .Sigga .sec {
+            position: relative;
+            background-color: #020912;
+            padding: 30px 100px;
+            height: 80vh;
+            overflow: hidden;
+            /* Add this line */
+        }
+
+        .Sigga.sec img {
+            height: 50px;
+        }
+
+        .sec h2 {
+            font-size: 3em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .sec p {
+            font-size: 1em;
+            color: #fff;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .sec p+p {
+            margin-top: 30px;
+        }
+
+        .latest-collection {
+            padding: 50px;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .latest-collection h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .car-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .car-details img {
+            height: 38vh;
+            margin-right: 30px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .car-details .details {
+            text-align: left;
+        }
+
+        .car-details h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .car-details p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .car-details ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .car-details ul li {
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #8b0202;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:hover {
+            background-color: #5c030a;
+        }
+
+        .container {
+            height: 140vh;
+            width: 100%;
+            background-color: rgb(26, 26, 27);
+            overflow-y: hidden;
+
+        }
+
+        .service-wrapper {
+            padding: 5% 8%;
+        }
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            height: auto;
+            color: #fff;
+            font-size: 5rem;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: transparent;
+            letter-spacing: 4px;
+            background-color: rgb(4, 52, 83);
+            background: linear-gradient(8deg, rgba(8, 52, 83, 1) 0%, rgba(0, 230, 173, 1) 41%, rgba(41, 17, 45, 1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            overflow: hidden;
+
+
+        }
+
+        h1:after {
+            content: "";
+            position: absolute;
+            top: 87%;
+            left: 10%;
+            height: 8px;
+            width: 80%;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.055);
+        }
+
+        h1 span {
+            position: absolute;
+            top: 85%;
+            left: 10%;
+            height: 8px;
+            width: 10px;
+            border-radius: 8px;
+            background-color: rgb(0, 251, 255);
+            animation: anim 5s linear infinite;
+        }
+
+        @keyframes anim {
+            95% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                left: 88%;
+            }
+        }
+
+        .cards {
+            display: grid;
+            padding: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            /* Adjust the gap value as needed */
+            margin-top: 50px;
+            justify-content: center;
+
+
+        }
+
+        .card {
+            height: 350px;
+            width: 370px;
+            background-color: #222632;
+            padding: 3% 8%;
+            border: 0.2px solid rgba(114, 226, 174, 0.2);
+            border-radius: 8px;
+            transition: .6px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:after {
+            content: "";
+            position: absolute;
+            top: 150%;
+            left: -200px;
+            width: 120%;
+            transform: rotate(50deg);
+            background-color: #fff;
+            height: 18px;
+            filter: blur(30px);
+            opacity: 0.5;
+            transition: 1s;
+        }
+
+        .card:hover:after {
+            width: 225%;
+            top: -130%;
+        }
+
+        .card p {
+            text-align: center;
+            width: 100%;
+            margin: 12px 0;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+
+        .card:hover {
+            background-color: transparent;
+            transform: translateY(-8px);
+            border-color: #00ff37;
+
+        }
+
+        .card:hover i {
+            border-color: #00ff37;
+        }
+
+
+
+
+        .card i {
+            color: #72e2ae;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 4.8 rema;
+        }
+
+        .card h2 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+
+        }
+
+        footer {
+            background-color: #000000ff;
+            position: relative;
+            width: 100%;
+            min-height: 350px;
+            padding: 3rem 1rem;
+        }
+
+        .foot {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .col {
+            min-width: 250px;
+            color: #f2f2f2f2;
+            font-family: poppins;
+            padding: 0 2rem;
+        }
+
+        .col .logo {
+            width: 100px;
+            margin-bottom: 25px;
+        }
+
+        .col h3 {
+            color: #ff014fff;
+            margin-bottom: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .col h3::after {
+            content: '';
+            height: 3px;
+            width: 0px;
+            background-color: #ff014fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: 0.3s ease;
+
+        }
+
+        .col h3:hover::after {
+            width: 30px
+        }
+
+        .col .social a i {
+            color: #ff014fff;
+            margin-top: 2rem;
+            margin-right: 5px;
+            transition: 0.3s ease;
+        }
+
+        .col .social a i:hover {
+            transform: scale(1.5);
+            filter: grayscale(25);
+        }
+
+        .col .links a {
+            display: block;
+            text-decoration: none;
+            color: #f2f2f2;
+            margin-bottom: 5px;
+            position: relative;
+            transition: 0.3s ease;
+        }
+
+        .col .links a::before {
+            content: '';
+            height: 16px;
+            width: 3px;
+            position: absolute;
+            top: 5px;
+            left: -10px;
+            background-color: #ff014fff;
+            transition: 0.5s ease;
+            opacity: 0;
+        }
+
+        .col .links a:hover::before {
+            opacity: 1;
+        }
+
+        .col .links a:hover {
+            transform: translateX(-8px);
+            color: #ff014fff;
+        }
+
+        .col .contact-details {
+            display: inline-flex;
+            justify-content: space-between;
+        }
+
+        .col .contact-details i {
+            margin-right: 15px;
+        }
+
+        .row .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .row .form input {
+            background-color: #1a1c20ff;
+            border: 0;
+            outline: none;
+            padding: 14px 20px;
+            border-radius: 6px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .form button {
+            padding: 14px 20px;
+            border: 0;
+            border-radius: 6px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            background-color: #ff014fff;
+        }
+
+        /********** Responsive Design ********/
+        @media(max-width:900px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .col {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 25px;
+            }
+        }
+
+        @media(max-width:768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .col {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container">
+        <p id="Astra">Astra</p>
+
+        <pre id="tagline">       Driving dreams into reality
+            —because luxury isn’t just a purchase
+            it’s a legacy.</pre>
+
+        <input type="checkbox" id="click">
+        <label for="click">
+            <i class='menu-btn bx bx-menu' id="menu_btn"></i>
+            <i class='close-btn bx bx-x-circle' id="close-btn"> <button id="closeBtn"></button></i>
+        </label>
+
+
+        <div class="sidenav">
+            <div class="logo">
+                <h2>Astra</h2>
+            </div>
+
+            <div class="search_bar">
+                <form action="#">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search...">
+                </form>
+            </div>
+
+            <div class="menu_text">
+                <p>Menu</p>
+            </div>
+
+            <div class="icon_items">
+                <ul>
+                    <li class="active">
+                        <i class='bx bxs-home'></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <i class="ri-login-box-line"></i>
+                        <a href="/">Login</a>
+
+
+                    </li>
+                    <li>
+                        <i class="ri-login-circle-line"></i>
+                        <a href="/signup">Register</a>
+                    </li>
+                    <li>
+                        <i class="ri-bookmark-line"></i>
+                        <a href="/aboutus">About Us</a>
+                    </li>
+                    <li>
+                        <i class="ri-car-line"></i>
+                        <a href="/welcome">BMW</a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-group'></i>
+                        <a href="/carpreference">Survey</a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-help-circle'></i>
+                        <a href="/chatbot">Chat With US</a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-cog'></i>
+                        <a href="#">Setting</a>
+                    </li>
+                    <li>
+                        <i class='bx bx-log-in'></i>
+                        <a href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="root"></div>
+    <script src="public\app.jsx"></script>
+
+    <div class="latest-collection">
+        <h2>Latest Collection</h2>
+        <div class="car-details">
+            <img src="/images/blue BMW M2 Coupe Car - 1812x960.png" alt="Car Image">
+            <div class="details">
+                <h3>Brand New Model</h3>
+                <p>Introducing our latest model - BMW M2 Competition With its sleek design and powerful performance, the
+                    Gtr is set to revolutionize the luxury car market.</p>
+                <p>Key features:</p>
+                <ul>
+                    <li>Engine: 5.0L V8 Twin-Turbo</li>
+                    <li>Horsepower: 600hp</li>
+                    <li>Acceleration: 0-60mph in 3.5 seconds</li>
+                    <li>Price: $150,000</li>
+                </ul>
+                <a href="/car" class="btn">More Info</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="service-wrapper">
+            <div class="service">
+                <h1>Our Services <span></span></h1>
+                <div class="cards">
+                    <div class="card">
+                        <i class="fa-brands fa-chromecast"></i>
+                        <h2>Largest Dealership</h2>
+                        <p>We offer the largest selection of new and used cars, ensuring you find the perfect vehicle to
+                            suit your needs. From sedans to SUVs, we have it all.</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <h2>Modding and Wrapping</h2>
+                        <p>Transform your car with our expert modding and wrapping services. We offer custom paint jobs,
+                            vinyl wraps, and performance upgrades to make your car stand out.</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-solid fa-user-group"></i>
+                        <h2>Insurance Support</h2>
+                        <p>Our team provides comprehensive insurance support, helping you navigate policies and claims
+                            with ease. We ensure you get the coverage you need.</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-solid fa-user-group"></i>
+                        <h2>Financing Options</h2>
+                        <p>We offer flexible financing options to help you drive away in your dream car. Our experts
+                            will work with you to find a plan that fits your budget.</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-solid fa-user-group"></i>
+                        <h2>Customer Support</h2>
+                        <p>Our dedicated customer support team is here to assist you with any questions or concerns. We
+                            strive to provide exceptional service at every step.</p>
+                    </div>
+
+                    <div class="card">
+                        <i class="fa-solid fa-user-group"></i>
+                        <h2>After-Sales Service</h2>
+                        <p>Our after-sales service ensures your vehicle stays in top condition. We offer regular
+                            maintenance, repairs, and genuine parts to keep your car running smoothly.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{!-- <div class="footer">
+        <div class="footbox1">
+            <strong style=" font-size: 35px;">Astra</strong>
+            <br><br>
+            <p style="font-size: 20px; text-align: start;margin-top: 8px;">Unlock your dream ride at unbeatable prices.
+                Find your perfect car, priced just right, on our website
+                today.</p>
+            <br><br>
+            <p style="font-size: 17px;">info@Astra.com<br>
+                +1 (885) 256-3154</p>
+        </div>
+        <div class="footbox2">
+            <strong> Top Brands</strong>
+            <br><br>
+            <li>Rolls Royce</li>
+            <li>BMW</li>
+            <li>Mercedes</li>
+            <li>Audi</li>
+            <li>Porsche</li>
+        </div>
+        <div class="footbox3">
+            <strong>Follow Us</strong>
+            <br><br>
+            <div class="social-icons">
+                <a href="my-app\src\Footer.jsx"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <br>
+            <p style="font-size: 21px;text-align: left;">Stay connected with us on social media for the latest updates,
+                offers, and more!</p>
+        </div>
+        <div id="footer"></div>
+    </div> --}}
+    <footer>
+        <div class="foot">
+            <div class="row">
+                <div class="col" id="company">
+                    <img src="images/logo.png" alt="" class="logo">
+                    <p>
+                        We are specialized in designings, make your business a brand.
+                        Try our premium services.
+                    </p>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="col" id="services">
+                    <h3>Top Brands</h3>
+                    <div class="links">
+                        <a href="#">BMW</a>
+                        {{!-- <a href="#">Rolls-Royce</a>
+                        <a href="#">Bentley</a>
+                        <a href="#">Aston Martin</a> --}}
+                    </div>
+                </div>
+
+                <div class="col" id="useful-links">
+                    <h3>Links</h3>
+                    <div class="links">
+                        <a href="aboutus.hbs">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Help</a>
+                    </div>
+                </div>
+
+                <div class="col" id="contact">
+                    <h3>Contact</h3>
+                    <div class="contact-details">
+                        <i class="fa fa-location"></i>
+                        <p>info@Astra <br> Palakkad,Kerala,India</p>
+                    </div>
+                    <div class="contact-details">
+                        <i class="fa fa-phone"></i>
+                        <p>+1 (885) 256-3154</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form">
+                    <form action="">
+                        <input type="text" placeholder="Email here..." id="mailinput">
+                        <button id="mail"><i class="fa fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+
+    </div>
+    <script src="/email.js"></script>
+</body>
+
+
+</html>

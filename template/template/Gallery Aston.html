@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aston Martin Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            /* Text color */
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(255, 163, 3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            /* Ensure the image fills the entire container */
+            object-fit: cover;
+            /* Cover the container while maintaining aspect ratio */
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            /* Dark overlay */
+            color: #ffffff;
+            /* Text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h3 {
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>LUXURY COLLECTIONS</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.fyAbYrj0Zlu41TBwFIjKNQAAAA?w=474&h=248&rs=1&pid=ImgDetMain"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>V12 Vantage</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.RqyS7pTSJAhvOM-bStNwTgHaFG?w=1024&h=705&rs=1&pid=ImgDetMain"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>DB9</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.5vnoEkczwS3fPLO3CC5hYgHaE7?w=267&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>Estate</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.topgear.com/sites/default/files/images/cars-road-test/2018/05/14c0b66a121ec846cb01b71447a90299/aston_martin_db11_amr_signature_edition_24063.jpg"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>DB 11</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.fMhsUXtvo7QOylJmEEHwfAAAAA?w=474&h=266&rs=1&pid=ImgDetMain"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>Valkyrie</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.cardivision.com/sites/default/files/image-gallery/Aston-Martin-AM-310-Vanquish-Car-t112132.jpg"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>310 Vanquish</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

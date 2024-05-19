@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            /* Text color */
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(255, 163, 3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            /* Ensure the image fills the entire container */
+            object-fit: cover;
+            /* Cover the container while maintaining aspect ratio */
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            /* Dark overlay */
+            color: #ffffff;
+            /* Text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h3 {
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>LUXURY COLLECTIONS</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/13759.jpg"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>Lamborghini Revuelto</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.JugBMBp7ummagJNe8rvC0AHaD4?rs=1&pid=ImgDetMain"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>Lamborghini Aventador</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.oDuM--0iw_VfsvCYluQSbQHaE8?rs=1&pid=ImgDetMain"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>Lamborghini Veneno</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.hdcarwallpapers.com/download/lamborghini_sian_fkp_37_2021_5k_8-3840x2160.jpg"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>Lamborghini Sian</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/gallardo-0638.jpg"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>Lamborghini Gallardo</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.businessinsider.in/photo/81672481/review-the-27200-lamborghini-urus-is-king-of-the-suvs-but-its-missing-some-magic.jpg?imgsize=380608"
+                    alt="BMW">
+                <div class="overlay">
+                    <h3>Lamborghini Urus</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

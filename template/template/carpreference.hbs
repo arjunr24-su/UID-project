@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://source.unsplash.com/1600x900/?sports-car');
+      background-size: cover;
+      background-position: center;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode-on {
+      background-color: #333;
+      color: #fff;
+      height:25px;
+    }
+    .nav  {
+      display: flex;
+      justify-content: space-between; /* Aligns elements to the start and end of the container */
+      align-items: center; /* Centers items vertically */
+      text-align: center;
+      font-size: small;
+      background-color: black;
+      color: white;
+      padding: 10px;
+    }
+    .nav a {
+        text-decoration: none;
+        color: white;
+    }
+    .dark-mode-button {
+      padding: 5px 10px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container {
+      width: 50%;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 5px 10px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="nav">
+    <a href=""><h1>ASTRA</h1></a>
+    <button class="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
+</div>
+<div class="container">
+  <h1>Car Preferences</h1>
+  <form id="carForm" action="/carpreference" method="post">
+    <label for="carBrand">Car Brand:</label>
+    <input type="text" id="carBrand" name="carBrand">
+
+    <label for="carType">Car Type:</label>
+    <input type="text" id="carType" name="carType">
+
+    <label for="seats">Number of Seats:</label>
+    <input type="text" id="seats" name="seats">
+
+    <label for="fuel">Fuel Type:</label>
+    <input type="text" id="fuel" name="fuel">
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color">
+
+    <label for="mileage">Mileage:</label>
+    <input type="number" id="mileage" name="mileage">
+
+    <label for="power">Power Range:</label>
+    <input type="text" id="power" name="power">
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('carForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var carBrand = document.getElementById('carBrand').value;
+    var carType = document.getElementById('carType').value;
+    var seats =document.getElementById('seats').value;
+    var fuel = document.getElementById('fuel').value;
+    var color = document.getElementById('color').value;
+    var mileage = document.getElementById('mileage').value;
+    var power = document.getElementById('power').value;
+
+    // Check if any input field is empty
+    if (carBrand === "" || carType === "" || seats === "" || fuel === "" || color === "" || power === "") {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    // Check if mileage is a valid number
+    if (isNaN(mileage) || mileage < 0) {
+      alert('Please enter a valid number for mileage.');
+      return;
+    }
+
+    // Submit the form data if all validations pass
+    alert('Car Brand: ' + carBrand + '\nCar Type: ' + carType + '\nNumber of Seats: ' + seats + '\nFuel Type: ' + fuel + '\nColor: ' + color + '\nMileage: ' + mileage + '\nPower Range: ' + power);
+    this.submit();
+  });
+
+  // Function to toggle dark mode
+  function toggleDarkMode() {
+    var body = document.body;
+    var button = document.querySelector('.dark-mode-button');
+
+    body.classList.toggle("dark-mode-on");
+
+    if (body.classList.contains("dark-mode-on")) {
+      button.textContent = "Light Mode";
+    } else {
+      button.textContent = "Dark Mode";
+    }
+  }
+</script>
+
+</body>
+</html>

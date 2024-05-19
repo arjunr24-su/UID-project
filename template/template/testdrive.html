@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Drive Form</title>
+    <link rel="stylesheet" href="testdrive.css">
+</head>
+<body>
+    <div class="box">
+        <div class="form">
+            <h2>Test Drive</h2>
+            <form id="testDriveForm" action="submit_testdrive.php" method="POST">
+                <div class="inputBox">
+                    <input type="text" name="name" required placeholder="Name" >
+                </div>
+                <div class="inputBox">
+                    <input type="email" name="email" required placeholder="Email">
+                </div>
+                <div class="inputBox">
+                    <input type="tel" name="phone" required placeholder="Phone">
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="car" required placeholder="Choose Car">
+                </div>
+                <div class="inputBox" >
+                    <input type="date" name="test_date" required placeholder="Booking Date" style="color: white;">
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+            <button id="confirmMessage" style="display: none;">Confirm Booking</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and confirmation message
+        document.getElementById('testDriveForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Assuming successful submission, show confirmation message
+            document.getElementById('testDriveForm').style.display = 'none'; // Hide the form
+            document.getElementById('confirmMessage').style.display = 'block'; // Show the confirmation message
+
+            // Get the selected date and set it as placeholder
+            var selectedDate = document.getElementById('test_date').value;
+            document.getElementById('test_date').setAttribute('placeholder', selectedDate);
+        });
+    </script>
+</body>
+</html>

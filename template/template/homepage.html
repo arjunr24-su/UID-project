@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="button.css">
+    <style>*{
+        padding: 0;
+        margin: 0;
+    }
+    #model_main{
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/009/447/784/small/wall-room-cement-textured-background-in-dark-brown-colour-illustration-studio-backdrop-dark-grey-concrete-floor-with-cracked-surface-pattern-banner-background-for-loft-design-concepts-vector.jpg");
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .model-img{
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 80vh;
+        width: 100vw;
+    }
+    .navigation{
+        display: flex;
+        flex-direction: row;
+        text-indent: 50%;
+        width: 100%;
+    }
+    .gallery-images{
+        margin: 2px;
+        width: 33vw;
+        height: 40vh;
+    }
+    .gallery-images:hover {
+        scale: 1.01;
+        box-shadow: 5px 5px var(--shadow);
+        transition: all 0.2s;
+      }
+    #head{
+        width: 30vw;
+        height: 7vh;
+    
+    }
+    #head h1{
+        font-size: 4.5ch;
+        padding-top: 10px;
+    }
+    .search{
+        margin-left: 5vw;
+        display: flex;
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+        input{
+            height: 60%;
+            width: 70%;
+            margin-top: 5px;
+            padding-left: 3px;  
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: medium;
+            padding-left: 5px;
+        }
+        button{
+            height: 5.2vh;
+            width: 55px;
+            margin-top: 5px;
+        }
+        button:hover{
+            background: #d4d8de;
+            color: #174ea6;
+        }
+    }
+    .logo{
+        width: 30vw;
+        height: 7vh;
+        padding-top: 10px;
+        display: flex;
+        justify-content: end;
+    }
+    #p911{
+        background-image: url("https://cdn.motor1.com/images/mgl/Vzz1qK/s3/most-expensive-2023-porsche-911-gt3-rs.jpg");
+        height: 40vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #p911 button{
+        width: 4.5vw;
+        height: 5vh;
+        margin: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    #p718{
+        background-image: url("https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXABuN9dMGF4tl3U0%25z8rMHIspbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmWBisGK7Zlp0KtYYF%25mVSW8uAVbsqYSJFP0iO5Mm13HcTCkpaGXoq15%25qr6hnQs1ITngI76c4UEl2Pz3BZhUynAYy1");
+        background-size: cover;
+        height: 40vh;
+        background-repeat: no-repeat;
+    }
+    #p718 button{
+        width: 4.5vw;
+        height: 5vh;
+        margin: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    #Panamera{
+        background-image: url("https://etimg.etb2bimg.com/photo/107843225.cms");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 40vh;
+    }
+    #Panamera button{
+        width: 4.5vw;
+        height: 5vh;
+        margin: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    #Taycan{
+        background-image: url("https://di-uploads-pod15.dealerinspire.com/porscheomaha/uploads/2021/07/2021_Porsche_Taycan.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 40vh;
+    }
+    #Taycan button{
+        width: 4.5vw;
+        height: 5vh;
+        margin: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    #Macan{
+        background-image: url("https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/teaser_720x406x2/dam/pnr/2024/Products/The-new-Macan/Galerie-1/S24_0066_fine.jpg/jcr:content/S24_0066_fine.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 40vh;
+    }
+    #Macan button{
+        width: 4.5vw;
+        height: 5vh;
+        margin: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    #Cayenne{
+        background-image: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/202304/2023_porsche_cayenne-sixteen_nine.jpg?VersionId=Co7MQMBS6cn95Cl0nRpjvmPiSumjvrYM&size=690:388");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 40vh;
+    }
+    #Cayenne button{
+        width: 4.5vw;
+        height: 5vh;
+        margin: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .model-img button{
+      align-items: center;
+      appearance: none;
+      background-color: #fff;
+      border-radius: 24px;
+      border-style: none;
+      box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+      box-sizing: border-box;
+      color: #3c4043;
+      cursor: pointer;
+      display: inline-flex;
+      fill: currentcolor;
+      font-family: "Google Sans",Roboto,Arial,sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      height: 48px;
+      justify-content: center;
+      letter-spacing: .25px;
+      line-height: normal;
+      max-width: 100%;
+      overflow: visible;
+      padding: 2px 24px;
+      position: relative;
+      text-align: center;
+      text-transform: none;
+      transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: auto;
+      will-change: transform,opacity;
+      z-index: 0;
+    }
+    .model-img button:hover {
+        background: #d4d8de;
+        color: #174ea6;
+    }
+      
+    .model-img button:active {
+        box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+        outline: none;
+    }
+      
+    .model-img:focus {
+        outline: none;
+        border: 2px solid #4285f4;
+    }
+      
+    .model-img button:not(:disabled) {
+        box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+      
+    .model-img button:not(:disabled):hover {
+        box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+    }
+      
+    .model-img button:not(:disabled):focus {
+        box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+      
+    .model-img button:not(:disabled):active {
+        box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+    }
+      
+    .model-img button:disabled {
+        box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+    
+    /* Responsiveness */
+    @media only screen and (max-width:1200px) {
+        .model-img{
+            height: 200vh;
+        }
+        .gallery-images{
+            width: 100vw;
+        }
+        .navigation{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #head{
+            width: 100vw;
+            justify-content: center;
+        }
+        #head h1{
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+            padding-left: 29vw;
+        }
+        .logo{
+            justify-content: center;
+            align-items: center;
+        }
+        .search{
+            width: 100vw;
+        }
+        .search button{
+            height: 3.4vh;
+            width: 40px;
+        }
+        .search input{
+            width: 50vw;
+            height: 3vh;
+            font-size: 90%;
+        }
+    }</style>
+</head>
+<body>
+    <div id="model_main">
+        <div class="navigation">
+            <div id="head">
+                <h1 style="text-indent: 15vw; padding-top:10px;">Models</h1><br>
+            </div>
+            <div class="search">
+                <label for="searchForCar"></label>
+                <input type="text" id="searchForCar" placeholder="Type to Search">
+                <button type="submit" id="searchForCar"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="logo">
+                <img width="105vw" src="https://logos-world.net/wp-content/uploads/2021/06/Porsche-Logo-2014.png" alt="">
+            </div>
+        </div>
+        <div class="model-img">
+            <div class="gallery-images" id="p911" >
+                <a href=""><button type="button">Details</button></a>
+            </div>
+            <div class="gallery-images" id="p718" >
+                <a href=""><button type="button">Details</button></a>
+            </div>
+            <div class="gallery-images" id="Panamera" >
+                <a href=""><button type="button">Details</button></a>
+            </div>
+            <div class="gallery-images" id="Taycan" >
+                <a href=""><button type="button">Details</button></a>
+            </div>
+            <div class="gallery-images" id="Macan" >
+                <a href=""><button type="button">Details</button></a>
+            </div>
+            <div class="gallery-images" id="Cayenne" >
+                <a href=""><button type="button">Details</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

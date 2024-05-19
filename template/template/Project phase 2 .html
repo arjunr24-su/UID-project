@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .top {
+            display: flex;
+            border: 2px solid black;
+            justify-content: space-between;
+            height: 10vh;
+        }
+
+        .top1 {
+            display: flex;
+            border: 2px solid red;
+            width: 30%;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            font-size: x-large;
+        }
+
+        .top2 {
+            border: 2px solid green;
+            width: 30%;
+        }
+
+        .top2 img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .top3 {
+            border: 2px solid blue;
+            width: 30%;
+        }
+
+        .Search {
+            height: 8vh;
+            padding: 5px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .main {
+            background-image: url(https://dt.azadicdn.com/wp-content/uploads/2014/01/beautiful_forest_path_2-wallpaper-1920x1080.jpg?6445);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 33vw 33vw 33vw ;
+            grid-template-rows:33% 33% 33%;
+            border: 2px solid white;
+        }
+
+        .types {
+            color: white;
+            border: 2px solid white;
+            grid-row-start: 2;
+        }
+        .latest{
+            border: 2px solid rgb(184, 36, 36);
+            grid-row-start: 2;
+            grid-column-start: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="top1">
+            <nav><a href="">About</a></nav>
+            <nav><a href="">Contact Us</a></nav>
+        </div>
+        <div class="top2">
+            <img src="Screenshot 2024-03-05 220338.png" alt="">
+        </div>
+        <div class="top3">
+            <h2>Driving Dreams Into Reality</h2>
+        </div>
+    </div>
+    <div class="Search">
+        <a href="">Lamborghini</a>
+        <a href="">Porsche</a>
+        <a href="">Toyota</a>
+        <a href="">Nissan</a>
+        <form action="">
+            <input type="text" placeholder="Select Car Brand">
+            <input type="submit" value="Search">
+        </form>
+        <a href="">Hyundai</a>
+        <a href="">Honda</a>
+        <a href="">Maruti</a>
+        <a href="">Tata</a>
+    </div>
+    <div class="main">
+        <div class="types">
+            <ul>
+                <li>
+                    <div class="bar">
+                        <div class="Model"> Sedan</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bar">
+                        <div class="Model"> XUV</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bar">
+                        <div class="Model"> SUV</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="bar">
+                        <div class="Model"> Hatchback</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="latest">
+            car1
+
+        </div>
+    </div>
+
+</body>
+
+</html>

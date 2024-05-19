@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .background-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+        }
+
+        .image:nth-child(1) {
+            left: 0;
+            animation: slideToLeft 5s forwards;
+        }
+
+        .image:nth-child(2) {
+            right: 0;
+            animation: slideToRight 5s forwards;
+        }
+
+        @keyframes slideToLeft {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideToRight {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            color: black;
+            /* Initial color */
+            animation: blendColor 3s forwards, slideInCenter 2s forwards;
+        }
+
+        .white-color {
+            color: white;
+            /* Force white color at the end */
+        }
+
+        @keyframes blendColor {
+            0% {
+                color: black;
+                /* Initial color */
+            }
+
+            50% {
+                color: white;
+                /* Midway color */
+            }
+
+            100% {
+                color: white;
+                /* Final color */
+            }
+        }
+
+        @keyframes slideInCenter {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -100%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .welcome-message h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .welcome-message p {
+            font-size: 1.5em;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-images">
+        <div class="image"
+            style="background-image: url('https://th.bing.com/th?id=OIP.VXSjkxcpsm3ahEN9tjW4MwHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2');">
+        </div>
+        <div class="image"
+            style="background-image: url('https://hintergrundbild.org/wallpaper/full/d/1/9/4650-beliebt-bmw-wallpapers-1920x1080-pictures.jpg');">
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="welcome-message" id="welcomeMessage">
+            <h1>WELCOME TO THE WORLD OF CARS</h1>
+
+        </div>
+
+    </div>
+    <a href="/car" id="redirect-link"></a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var images = document.querySelectorAll('.image');
+            var welcomeMessage = document.getElementById('welcomeMessage');
+
+            // Function to toggle color
+            function toggleColor() {
+                welcomeMessage.classList.toggle('white-color');
+            }
+
+            // Adding event listener for animation end on the first image
+            images[0].addEventListener('animationend', function () {
+                // Call toggleColor function when the first image animation ends
+                toggleColor();
+            });
+
+            // Adding event listener to navigate to the next page when clicked
+            document.addEventListener('click', function () {
+                window.location.href = document.getElementById('redirect-link').href;
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

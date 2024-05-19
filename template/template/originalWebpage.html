@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: visible !important;
+
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navigation {
+            color: white;
+            height: 10vh;
+            text-align: start;
+            display: flex;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.403);
+            background-image: radial-gradient(circle 1192px at 21.5% 49.5%, rgb(54, 34, 6) 0.1%, rgba(0, 0, 0, 1) 100.2%);
+        }
+
+        #dropdown {
+            position: relative;
+            top: 20px;
+            left: 70%;
+        }
+
+        ul li {
+            list-style: none;
+            margin: 0 auto;
+            border-left: 2px solid #af690d;
+            display: inline-block;
+            padding: 0 30px;
+            position: relative;
+            text-decoration: none;
+            text-align: center;
+            font-family: 'Serif', serif !important;
+            font-size: 25px;
+        }
+
+        li a {
+            color: white;
+        }
+
+        li a:hover {
+            color: #f4f4f4;
+        }
+
+        li:hover {
+            cursor: pointer;
+        }
+
+        ul li ul {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            padding-left: 0;
+            top: 20px;
+            left: -10px;
+            display: none;
+            background: rgba(255, 255, 255, 0.196);
+        
+            color: #ffffff;
+           
+        }
+
+        ul li:hover>ul,
+        ul li ul:hover {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+            min-width: 250px;
+            text-align: left;
+            padding-top: 20px;
+            box-shadow: 0px 3px 5px -1px #ccc;
+            color: #ffffff;
+           
+        }
+
+        ul li ul li {
+            clear: both;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 20px;
+            border-style: none;
+            color: #ffffff;
+            
+        }
+
+        ul li ul li a:hover {
+            padding-left: 10px;
+            border-left: 2px solid #3ca0e7;
+            transition: all 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #Astra {
+            position: relative;
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 700;
+            top: 20px;
+            left: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .dropdown-content {
+            top: 40px;
+            left: -10px;
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.118);
+         
+            min-width: 250px;
+            box-shadow: 0px 3px 5px -1px #ccc;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #ffffff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #e5edf33b;
+            color: white;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .about {
+            position: relative;
+            top: 50px;
+            background-image: url(Screenshot\ 2024-04-17\ 114804.png);
+            height: 100vh;
+            background-size: 100vh 100px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            font-size: 45px;
+            text-align: left;
+
+        }
+
+        #tagline {
+            position: relative;
+            top: 60vh;
+            font-family: 'Serif', serif !important;
+        }
+
+        .writings {
+            font-family: 'Old English Text MT', 'Bookman Old Style', serif;
+            padding: 80px;
+            background-image: url(https://img.freepik.com/free-photo/abstract-background-border-black-smoke-texture-border-cinematic-design_53876-133406.jpg?t=st=1714583592~exp=1714587192~hmac=ba744f96617ea4de6461f0e393c9f00ce38352c2db0aef18d4dbe657d334a42c&w=1060);
+            background-repeat: none;
+            background-size: cover;
+            background-color: #1a1a1a;
+            color: white;
+            line-height: 2.3;
+            font-size: 23px;
+            height: 100vh;
+        }
+
+        .writings .innerbox2 {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .writings.innerbox2 strong {
+            font-size: 40px;
+        }
+
+        .latest-collection {
+            padding: 50px;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .latest-collection h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .car-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .car-details img {
+            height: 38vh;
+            margin-right: 30px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .car-details .details {
+            text-align: left;
+        }
+
+        .car-details h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .car-details p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .car-details ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .car-details ul li {
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #8B4513;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:hover {
+            background-color: #A0522D;
+        }
+
+        .services {
+
+            position: relative;
+            height: 60vh;
+            width: 65vw;
+            top: 42%;
+            left: 16%;
+            margin: 30px;
+            display: flex;
+            justify-content: space-evenly;
+
+
+        }
+
+        .services h1 {
+            font-size: 40px;
+            color: white;
+            position: relative;
+            right: 15vh;
+            top: 10vh;
+            text-transform: uppercase;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            
+        }
+
+
+        #s1,
+        #s2,
+        #s3 {
+            height: 100%;
+            margin: 10px;
+            border: none;
+            text-align: center;
+            font-size: 22px;
+            padding: 20px;
+            background-color: #FAACA8;
+            background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+
+        }
+        #s1,#s2,#s3{
+            border-right: 5px solid white;
+            border-bottom:10px solid #e68c7b;
+        }
+
+        #s1:hover,
+        #s2:hover,
+        #s3:hover {
+            transform: translateY(5px);
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #s1 h2 a,
+        #s2 h2 a,
+        #s3 h2 a {
+            color: #232121;
+            /* Dark gray text color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #s1 h2 a:hover,
+        #s2 h2 a:hover,
+        #s3 h2 a:hover {
+            color: #4e3404;
+          
+        }
+
+        .footer {
+
+            padding: 50px 0px;
+           
+            background: linear-gradient(to right, #190A05, #4f2102);
+            color: #ffffff;
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+            top: 80px;
+            right: 2.3px;
+            width: 100vw;
+            border-top: #696867 3px solid;
+            border-style: double;
+        }
+
+        .footer .footbox1,
+        .footer .footbox2,
+        .footer .footbox3 {
+            width: 30%;
+            font-size: x-large;
+            text-align: center;
+            list-style: none;
+        }
+
+        .footer strong {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .footer p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+
+        .footer .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer .social-icons a {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ec8d08;
+        }
+        .footbox1,.footbox2{
+            border-right:2px solid white
+        }
+        .footbox1{
+            padding-right: 20px;
+        }
+
+
+        @media screen and (max-width: 768px) {
+
+
+            #dropdown {
+                position: relative;
+                left: 4vh;
+                list-style: none;
+            }
+
+            .dropdown-content {
+                top: 10vh;
+              
+                left: 0;
+                position: fixed;
+                background-color: rgba(255, 255, 255, 0.71);
+             
+                width: 100vw;
+              
+                height: 100vh;
+               
+                padding: 20px;
+                box-shadow: 0px 3px 5px -1px #ccc;
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: #030303;
+                padding: 12px 0;
+                font-size: 30px;
+                display: block;
+                text-align: center;
+               
+            }
+
+            .about {
+                background-image: url(Screenshot\ 2024-04-17\ 114804.png);
+                background-repeat: no-repeat;
+                background-size: 60vh 60vh;
+                color: white;
+                font-size: 25px;
+                text-align: left;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+
+            #tagline {
+                position: relative;
+                top: 45vh;
+                right: 5vh;
+            }
+
+
+            .writings {
+                position: relative;
+                top: -240px;
+                padding: 20px;
+                font-size: 14px;
+                z-index: -1;
+            }
+
+            .latest-collection {
+                padding: 20px;
+                position: relative;
+                bottom: 35vh;
+            }
+
+            .latest-collection .car-details {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .latest-collection .car-details img {
+                width: 70vw;
+                max-height: 50vh;
+            }
+
+            .latest-collection .car-details .details {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .services {
+                position: relative;
+                bottom: 30vh;
+                right: 15vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 60px;
+                line-height: 5  px;
+            }
+            .services h1{
+                writing-mode: horizontal-tb;
+                position: relative;
+                top: -22px;
+                left: 0px;
+            }
+
+            .services div {
+                margin-bottom: 20px;
+            }
+
+            .footer {
+                position: relative;
+                top: 125vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .footer .footbox1,
+            .footer .footbox2 {
+                width: 100%;
+                padding-bottom: 40px;
+                border-bottom: 2px solid #ccc;
+            
+
+            }
+            .footbox2,.footbox3{
+                padding-top: 20px;
+            }
+
+
+            .footer .footbox2 li {
+                text-align: left;
+                position: relative;
+                left: 10px;
+
+            }
+
+            .footbox2 {
+                padding-bottom: 20px;
+            }
+
+            .footbox3 {
+                margin-bottom: 0px;
+            }
+
+            .footer .footbox3 {
+                width: 100%;
+                height: 20vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <a id="Astra" href="">Astra</a>
+        <nav role="navigation" class="primary-navigation" id="dropdown">
+            <ul>
+                <li><a href="#" id="Brands" onclick="toggleDropdown()">Brands &dtrif;</a>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="BMW CAR.html">BMW</a>
+                        <a href="Porsche.html">Porsche</a>
+                        <a href="Aston.html">Aston Martin</a>
+                        <a href="Bentley.html">Bentley</a>
+                        <a href="Benz.html">Benz</a>
+                        <a href="Lamborghini.html">Lamborghini</a>
+                        <a href="Maserati.html">Maserati</a>
+                        <a href="Audi.html">Audi</a>
+                        <a href="Rolls Royce.html">Rolls Royce</a>
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeDropdown()">&times;</a>
+                    </div>
+                </li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.classList.toggle("show");
+        }
+
+        function closeDropdown() {
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.classList.remove("show");
+        }
+
+        
+        window.onclick = function (event) {
+            if (!event.target.matches('#Brands')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                // for (var i = 0; i < dropdowns.length; i++) {
+                //     var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            // }
+        }
+    </script>
+    <div class="about">
+        <!-- <img src="Screenshot_2024-04-18_133557-removebg-preview.png" alt=""> -->
+        <pre id="tagline">        Driving dreams into reality
+        —because luxury isn’t just a purchase
+        it’s a legacy.</pre>
+    </div>
+    <div class="writings">
+        <div class="innerbox2">
+            <center><Strong>Who We Are</Strong></center>
+            <p>Our legacy traces back to a time when elegance, refinement, and opulence were not mere aspirations—they
+                were a way of life. We understand that true luxury transcends the material; it resides in the stories
+                whispered by well-worn leather seats, the timeless hum of a finely tuned engine, and the allure of a
+                classic silhouette against the setting sun.</p>
+            <p style="margin-top: 30px;">Our mission is simple: to transform your automotive desires into tangible
+                experiences. Whether you seek the dignified grace of a vintage Rolls-Royce or the cutting-edge
+                performance of a modern Bentley, Astra is your gateway to a world where every drive is an ode to
+                sophistication. We believe that owning a luxury car isn’t just about status; it’s about embracing a
+                heritage—a lineage that whispers secrets of prosperity and taste.</p>
+            <p style="margin-top: 30px;">Join us on this journey—a pilgrimage for those who appreciate the symphony of a
+                finely tuned engine, the aroma of aged leather, and the thrill of a winding road. At Astra, we don’t
+                just sell cars; we orchestrate legacies. Welcome to a world where old money meets modern aspiration, and
+                where every drive is a nod to the past, a salute to the present, and a promise to the future.</p>
+        </div>
+    </div>
+    <div class="latest-collection">
+        <h2>Latest Collection</h2>
+        <div class="car-details">
+            <img src="Blue BMW M2 Coupe Car - 1812x960.png" alt="Car Image">
+            <div class="details">
+                <h3>Brand New Model</h3>
+                <p>Introducing our latest model - Nissan GTR With its sleek design and powerful performance, the
+                    Gtr is set to revolutionize the luxury car market.</p>
+                <p>Key features:</p>
+                <ul>
+                    <li>Engine: 5.0L V8 Twin-Turbo</li>
+                    <li>Horsepower: 600hp</li>
+                    <li>Acceleration: 0-60mph in 3.5 seconds</li>
+                    <li>Price: $150,000</li>
+                </ul>
+                <a href="BMW CAR.html" class="btn">More Info</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="services">
+        <h1>Services</h1>
+        <div id="s1">
+            <h2><a href="#">largest <pre style="padding-top: 10px; padding-bottom: 10px;">dealership</pre> <span  > of car</span> </a></h2> <br><br>
+            <p style="line-height: 35px;">
+                Welcome to the epicenter of automotive excellence. With the largest selection under one roof, our
+                dealership is your gateway to driving satisfaction.
+            </p>
+
+        </div>
+        <div id="s2">
+            <h2><a href="#">unlimited <pre style="padding-top: 10px; padding-bottom: 10px;">repair</pre> warrenty</a></h2><br><br>
+            <p style="line-height: 35px;">
+                Drive with confidence under our unlimited repair warranty. Your vehicle is protected, ensuring peace
+                of mind against unexpected repair costs
+            </p>
+
+        </div>
+        <div id="s3">
+            <h2><a href="#">insurence <pre style="padding-top: 10px; padding-bottom: 10px;">support</pre></a></h2> <br><br>
+            <p style="line-height: 35px;">
+                Get hassle-free insurance assistance on our website. From coverage guidance to quotes, we ensure a
+                seamless process. Drive with confidence.
+            </p>
+
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="footbox1">
+            <strong style=" font-size: 35px;">Astra</strong>
+            <br><br>
+            <p style="font-size: 20px; text-align: start;margin-top: 8px;">Unlock your dream ride at unbeatable prices.
+                Find your perfect car, priced just right, on our website
+                today.</p>
+            <br><br>
+            <p style="font-size: 17px;">info@Astra.com<br>
+                +1 (885) 256-3154</p>
+        </div>
+        <div class="footbox2">
+            <strong> Top Brands</strong>
+            <br><br>
+            <li>Rolls Royce</li>
+            <li>BMW</li>
+            <li>Mercedes</li>
+            <li>Audi</li>
+            <li>Porsche</li>
+        </div>
+        <div class="footbox3">
+            <strong>Follow Us</strong>
+            <br><br>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <br>
+            <p style="font-size: 21px;text-align: left;">Stay connected with us on social media for the latest updates,
+                offers, and more!</p>
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>

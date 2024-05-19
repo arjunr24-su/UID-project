@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .navigation {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .primary-navigation ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .primary-navigation ul li {
+            position: relative;
+        }
+
+        .primary-navigation ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #444;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <a id="Astra" href="#">Astra</a>
+        <nav role="navigation" class="primary-navigation">
+            <ul>
+                <li>
+                    <a href="#" id="Brands" onclick="toggleDropdown()">Brands &dtrif;</a>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="BMW CAR.html">BMW</a>
+                        <a href="Porsche.html">Porsche</a>
+                        <a href="Aston.html">Aston Martin</a>
+                        <a href="Bentley.html">Bentley</a>
+                        <a href="Benz.html">Benz</a>
+                        <a href="Lamborghini.html">Lamborghini</a>
+                        <a href="Maserati.html">Maserati</a>
+                        <a href="Audi.html">Audi</a>
+                        <a href="Rolls Royce.html">Rolls Royce</a>
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeDropdown()">&times;</a>
+                    </div>
+                </li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.classList.toggle("show");
+        }
+
+        function closeDropdown() {
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.classList.remove("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('#Brands')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

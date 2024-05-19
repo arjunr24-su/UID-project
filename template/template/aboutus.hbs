@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: rgb(255, 255, 255);
+            height: auto;
+            color: rgb(0, 0, 0);
+            overflow-x: hidden;
+        }
+
+        .parallax {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('/images/NN.png') no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        .parallax img#tree-left {
+            position: absolute;
+            /* Fix: Added position property */
+            transform: translateX(-5px);
+        }
+
+        .parallax img#tree-right {
+            position: absolute;
+            /* Fix: Added position property */
+            transform: translateX(5px);
+        }
+
+        .parallax img#gate-left {
+            position: absolute;
+            /* Fix: Added position property */
+            transform: translateX(-332px);
+        }
+
+        .parallax img#gate-right {
+            position: absolute;
+            /* Fix: Added position property */
+            transform: translateX(332px);
+        }
+
+        #text {
+            position: relative;
+            bottom: 140px;
+            /* Fix: Added position property */
+            font-size: 5em;
+            color: #fff;
+            text-shadow: 2px 4px 5px #f9f9f9;
+        }
+
+        .sec {
+            position: relative;
+            background-color: #020912;
+            padding: 30px 100px;
+            height: 90vh;
+        }
+
+        .sec h2 {
+            font-size: 3em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .sec p {
+            font-size: 1.6em;
+            color: #fff;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .sec p+p {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="parallax">
+        <h2 id="text">About Us</h2>
+        <img src="\images\tree-left.png" id="tree-left">
+        <img src="\images\tree-right.png" id="tree-right">
+        <img src="\images\gate-left.png" id="gate-left">
+        <img src="\images\gate-right.png" id="gate-right">
+        <img src="\images\grass.png" id="grass">
+    </section>
+    <section class="sec">
+        <h2>Our Mission</h2>
+        <h2 style="position: relative;bottom:79px;left:80vh;">Established since 2024</h2>
+        <center><strong>Who We Are</strong></center>
+        <p>Our legacy traces back to a time when elegance, refinement, and opulence were not mere aspirations—they were
+            a way of life. We understand that true luxury transcends the material; it resides in the stories whispered
+            by well-worn leather seats, the timeless hum of a finely tuned engine, and the allure of a classic
+            silhouette against the setting sun.</p>
+        <p>Our mission is simple: to transform your automotive desires into tangible experiences. Whether you seek the
+            dignified grace of a vintage Rolls-Royce or the cutting-edge performance of a modern Bentley, Astra is your
+            gateway to a world where every drive is an ode to sophistication. We believe that owning a luxury car isn’t
+            just about status; it’s about embracing a heritage—a lineage that whispers secrets of prosperity and taste.
+        </p>
+        <p>Join us on this journey—a pilgrimage for those who appreciate the symphony of a finely tuned engine, the
+            aroma of aged leather, and the thrill of a winding road. At Astra, we don’t just sell cars; we orchestrate
+            legacies. Welcome to a world where old money meets modern aspiration, and where every drive is a nod to the
+            past, a salute to the present, and a promise to the future.</p>
+    </section>
+
+    <script src="/script.js"></script>
+</body>
+
+
+</html>
