@@ -1,4 +1,4 @@
-https://youtu.be/NBw19fPCgtA --> temporary youtube working demo
+
 
 
 # 🚀 ASTRA - Luxury Car Dealership Website 🚗
@@ -29,7 +29,7 @@ The purpose of this project is to provide a seamless and enjoyable car buying ex
 
 For a step-by-step guide on how to install and use our project, please refer to the video below:
 
-(Embed the video link here)
+https://youtu.be/NBw19fPCgtA --> temporary youtube working demo
 
 ## 🚀 Impact
 
