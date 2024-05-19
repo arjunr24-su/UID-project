@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="car.css">
+    <title>Responsive sidebar submenus</title>
+</head>
+<body>
+    <div class="car-container">
+        <!-- Existing car text -->
+        <p class="car-text"></p>
+        <div>
+        <img src="Blue BMW M2 Coupe Car - 1812x960.png" alt="Car Image" class="car-image" id="carImage">
+    </div>
+        <!-- New text to display above the enlarged image -->
+        <div class="enlarged-text">
+            <h1>M2 Competition</h1>
+            <h2>Nobody is perfect, but if you drive a BMW, you're pretty close</h2>
+        </div>
+        <a href="interior.html" class="animated-button">More images</a>
+        <!-- Container for additional images -->
+        <div class="container">
+            <div class="futures">
+                <div class="feature car-item" data-name="engine">
+                    <img src="engine.png" alt="Engine">
+                    <p>625 HP (460 kw) High-Performance M Twin Cylinder Turbo Engine</p>
+                </div>
+                <div class="feature car-item" data-name="transmission">
+                    <img src="transmission.png" alt="Transmission">
+                    <p>M XDrive with active M differential Auto 8 speed gear box</p>
+                </div>
+                <div class="feature car-item" data-name="power">
+                    <img src="power.png" alt="Power">
+                    <p>460 kw/625 Nm, 0-100 km/h in 3.2s</p>
+                </div>
+                <div class="feature car-item" data-name="brake">
+                    <img src="brake.png" alt="Brake">
+                    <p>4 wheel alloy with 20mm disk brake</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--========== HEADER ==========-->
+    <header class="header">
+        <div class="header__container">
+            <img src="bmw_logo.png" alt="" class="header__img">
+            <a href="bmw_logo.png" class="header__logo">BMW</a>
+            <div class="header__search">
+                <!-- Original search input -->
+                <input type="search" placeholder="Search" class="header__input" id="searchInput" oninput="showSuggestions()">
+                <i class='bx bx-search header__icon' id="searchIcon"></i>
+                <!-- Suggestions container -->
+                <div id="suggestions" class="suggestions"></div>
+            </div>
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+        </div>
+    </header>
+    <!--========== NAV ==========-->
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+                <a href="bmw_logo.png" class="nav__link nav__logo">
+                    <i class='bx bxs-disc nav__icon'></i>
+                    <span class="nav__logo-name">BMW</span>
+                </a>
+                <div class="nav__list">
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Profile</h3>
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-home nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+                        <div class="nav__dropdown">
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-user nav__icon'></i>
+                                <span class="nav__name">Profile</span>
+                                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                            </a>
+                            <div class="nav__dropdown-collapse">
+                                <div class="nav__dropdown-content">
+                                    <a href="#" class="nav__dropdown-item">Passwords</a>
+                                    <a href="#" class="nav__dropdown-item">Mail</a>
+                                    <a href="#" class="nav__dropdown-item">Accounts</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Menu</h3>
+                        
+                        <a href="Gallery.html" class="nav__link">
+                            <i class='bx bx-bookmark nav__icon'></i>
+                            <span class="nav__name">Gallery</span>
+                        </a>
+                        <a href="add.html" class="nav__link">
+                            <i class='bx bx-bookmark nav__icon'></i>
+                            <span class="nav__name">Add Cars</span>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--========== MAIN JS ==========-->
+    <script src="car.js"></script>
+    
+</body>
+</html>
