@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Animated Images with Box Shadow</title>
+    <style>
+        body {
+            background-color: #d2e2ee;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            z-index: 999;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo img {
+            width: 40px;
+            height: auto;
+            margin-left: 20px;
+            float: left;
+        }
+
+        .nav {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #007bff;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .image-box {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .floating-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-size: 24px;
+            animation: floatAnimation 3s ease infinite alternate;
+        }
+
+        @keyframes floatAnimation {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+            100% {
+                transform: translate(-50%, -55%);
+            }
+        }
+
+        /* Styles for the back button */
+        .back-button {
+            display: block;
+            width: 50px;
+            margin: 30px auto;
+            text-align: center;
+            font-size: 24px;
+            color: #1c12d8;
+            
+            text-decoration: none;
+            
+            border-radius: 20%;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #5a89ab;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="bmw_logo.png" alt="Logo">
+        </div>
+        <div class="nav">
+            <div class="floating-text">Beauty Inside</div>
+        </div>
+    </header>
+
+    <div class="image-container">
+        <div class="image-box">
+            <img src="https://st.motortrendenespanol.com/uploads/sites/5/2018/07/2019-BMW-M2-Competition-interior-1.jpg" alt="Image 1">
+        </div>
+        <div class="image-box">
+            <img src="https://da4dkroembtou.cloudfront.net/wp-content/uploads/2016/06/P90220440_highRes_bmw-3-series-gran-tu.jpg" alt="Image 2">
+        </div>
+        <div class="image-box">
+            <img src="https://th.bing.com/th/id/OIP.VRTwnu7FqLg0qc8f4rgbjQHaE7?w=245&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Image 3">
+        </div>
+        <div class="image-box">
+            <img src="https://th.bing.com/th/id/OIP.EmNzU4k6Mnr2ZiqSTBilHQHaEK?w=288&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Image 4">
+        </div>
+        <div class="image-box">
+            <img src="https://th.bing.com/th/id/OIP.gYm0gek1O2w2Imn7gJ5QRgHaEK?w=324&h=182&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Image 5">
+        </div>
+        <div class="image-box">
+            <img src="https://th.bing.com/th/id/OIP.CaTnbRfa6O9dzfi0Vp6s4QHaE7?w=259&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Image 6">
+        </div>
+        <div class="image-box">
+            <img src="https://th.bing.com/th/id/OIF.f3C4C5e2GVKzGtaWJEXjZw?w=249&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Image 7">
+        </div>
+        <!-- Add more image boxes as needed -->
+    </div>
+
+    <!-- Back button positioned below the images -->
+    <a href="car.html" class="back-button">
+        <i class='bx bx-arrow-back'></i>
+    </a>
+</body>
+</html>
