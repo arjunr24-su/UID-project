@@ -107,6 +107,13 @@ app.get('/dummy2', (req, res) => {
 app.get('/aboutus', (req, res) => {
     res.render('aboutus')
 });
+
+app.get('/add', (req, res) => {
+    res.render('add')
+});
+app.get('/car', (req, res) => {
+    res.render('car')
+});
 app.get('/script.js', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/script.js'));
 });
