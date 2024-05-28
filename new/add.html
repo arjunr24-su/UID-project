@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Car</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .confirmation-message {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .confirmation-message h1 {
+            color: #4caf50;
+        }
+
+        .confirmation-message p {
+            color: #333;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+   
+    <h2>Add Car</h2>
+    <form id="addCarForm">
+        <label for="carName">Car Name:</label>
+        <input type="text" id="carName" name="carName" required><br><br>
+        <label for="carImage">Car Image:</label>
+        <input type="file" id="carImage" name="carImage" accept="image/*" required><br><br>
+        <button type="submit">Add Car</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('addCarForm').addEventListener('submit', function(event) {
+                // Check if the form fields are empty
+                const carName = document.getElementById('carName').value.trim();
+                const carImageFile = document.getElementById('carImage').files[0];
+                
+                if (!carName || !carImageFile) {
+                    alert('Please fill in all the required fields.');
+                    event.preventDefault(); // Prevent form submission
+                } else {
+                    // Create new image element
+                    const newCarImage = document.createElement('img');
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        newCarImage.src = e.target.result;
+                        newCarImage.alt = carName;
+
+                        // Save data to localStorage
+                        localStorage.setItem('carName', carName);
+                        localStorage.setItem('carImage', e.target.result);
+
+                        // Redirect to the confirmation page
+                        window.location.href = 'add_confirm.html';
+                    };
+
+                    reader.readAsDataURL(carImageFile);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
